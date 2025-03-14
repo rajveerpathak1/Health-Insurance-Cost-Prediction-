@@ -9,7 +9,7 @@ app = Flask(__name__, static_folder="static", template_folder="templates")
 CORS(app)  # Allow frontend to communicate with backend
 
 # Load the trained model
-model_path = Path("D:/Medical_expenses_project/Health-Insurance-Cost-Prediction/backend/insurance_cost_model.pkl")
+model_path = Path("D:\Project\Health-Insurance-Cost-Prediction-\insurance_cost_model.pkl")
 model = joblib.load(model_path)
 
 # Preprocessing function
