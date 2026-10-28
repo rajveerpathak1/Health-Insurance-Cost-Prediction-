@@ -1,0 +1,359 @@
+{
+  "data_quality": {
+    "rows": 2772,
+    "columns": 7,
+    "missing_values": 0,
+    "duplicate_rows": 1435,
+    "charges_outliers_iqr": 296,
+    "invalid_bmi": 0,
+    "invalid_age": 0
+  },
+  "hypothesis_tests": {
+    "smoker": {
+      "test": "smoker: yes vs no",
+      "mean_a": 32050.23183153284,
+      "mean_b": 8440.660306508937,
+      "ratio": 3.7971237637436497,
+      "mean_diff": 23609.571525023905,
+      "ci95_low": 22196.26988074811,
+      "ci95_high": 25022.8731692997,
+      "t_stat": 32.7423097372529,
+      "p_value_welch": 6.261720774727432e-103,
+      "p_value_mannwhitney": 5.74701188239214e-130,
+      "cohens_d": 3.1602902766581225,
+      "significant": true
+    },
+    "sex": {
+      "test": "sex: male vs female",
+      "mean_a": 13974.998863762965,
+      "mean_b": 12569.578843835347,
+      "ratio": 1.1118112259279789,
+      "mean_diff": 1405.4200199276183,
+      "ci95_low": 110.67263923407609,
+      "ci95_high": 2700.1674006211606,
+      "t_stat": 2.1275372170149476,
+      "p_value_welch": 0.03356154763676583,
+      "p_value_mannwhitney": 0.6944793894954917,
+      "cohens_d": 0.11620353454617083,
+      "significant": true
+    },
+    "obesity_nonsmokers": {
+      "test": "is_obese: 1 vs 0",
+      "mean_a": 8855.531348680928,
+      "mean_b": 7977.029520336653,
+      "ratio": 1.1101289428733616,
+      "mean_diff": 878.501828344275,
+      "ci95_low": 160.20275261637732,
+      "ci95_high": 1596.8009040721727,
+      "t_stat": 2.397140190957236,
+      "p_value_welch": 0.016696527410586557,
+      "p_value_mannwhitney": 0.004562885530610846,
+      "cohens_d": 0.14691389874377564,
+      "significant": true
+    },
+    "obesity_smokers": {
+      "test": "is_obese: 1 vs 0",
+      "mean_a": 41557.98983986207,
+      "mean_b": 21363.217015968992,
+      "ratio": 1.9453057940102139,
+      "mean_diff": 20194.77282389308,
+      "ci95_low": 18880.11501672381,
+      "ci95_high": 21509.43063106235,
+      "t_stat": 30.10802850671695,
+      "p_value_welch": 1.8781988960138207e-88,
+      "p_value_mannwhitney": 1.0826651243619328e-44,
+      "cohens_d": 3.6073389609255866,
+      "significant": true
+    },
+    "region": {
+      "test": "ANOVA charges ~ region",
+      "f_stat": 2.926139903662777,
+      "p_value": 0.03276288025447231,
+      "p_value_kruskal": 0.20161983372303882,
+      "eta_squared": 0.006542376581730343,
+      "significant": true
+    },
+    "age_group": {
+      "test": "ANOVA charges ~ age_group",
+      "f_stat": 33.52517630849675,
+      "p_value": 1.1130995568222848e-26,
+      "p_value_kruskal": 1.670884939633431e-77,
+      "eta_squared": 0.09146759479430498,
+      "significant": true
+    },
+    "children": {
+      "test": "ANOVA charges ~ children",
+      "f_stat": 3.2687344101195746,
+      "p_value": 0.006133448188176413,
+      "p_value_kruskal": 2.1957270957731766e-05,
+      "eta_squared": 0.01213029191410645,
+      "significant": true
+    },
+    "smoker_by_sex": {
+      "test": "Chi-square smoker x sex",
+      "chi2": 7.469139330086637,
+      "dof": 1,
+      "p_value": 0.0062765550120107375,
+      "cramers_v": 0.07474283675068631,
+      "significant": true
+    },
+    "smoker_by_region": {
+      "test": "Chi-square smoker x region",
+      "chi2": 7.277902541321909,
+      "dof": 3,
+      "p_value": 0.06354826573182332,
+      "cramers_v": 0.07377978990310645,
+      "significant": false
+    },
+    "age_corr": {
+      "test": "Correlation age ~ charges",
+      "pearson_r": 0.29830821250978634,
+      "p_value": 6.975748762691121e-29,
+      "spearman_rho": 0.5335232787189862,
+      "p_value_spearman": 3.187755650322312e-99,
+      "significant": true
+    },
+    "age_corr_nonsmokers": {
+      "test": "Correlation age ~ charges",
+      "pearson_r": 0.6274002231304534,
+      "p_value": 2.1516243227073845e-117,
+      "spearman_rho": 0.820275499782815,
+      "p_value_spearman": 1.1136032001810395e-259,
+      "significant": true
+    },
+    "bmi_corr": {
+      "test": "Correlation bmi ~ charges",
+      "pearson_r": 0.19840083122624938,
+      "p_value": 2.468040426451426e-13,
+      "spearman_rho": 0.11958495819244366,
+      "p_value_spearman": 1.1637179203181539e-05,
+      "significant": true
+    }
+  },
+  "interaction_table": {
+    "not_obese": {
+      "no": 7977.0,
+      "yes": 21363.0
+    },
+    "obese": {
+      "no": 8856.0,
+      "yes": 41558.0
+    }
+  },
+  "risk_tiers": [
+    {
+      "risk_tier": "Low",
+      "customers": 378,
+      "avg_charges": 6252.65,
+      "median_charges": 5029.71,
+      "total_charges": 2363501.42,
+      "avg_age": 31.96,
+      "avg_bmi": 25.51,
+      "customer_share_pct": 28.27,
+      "cost_share_pct": 13.31,
+      "cost_to_customer_ratio": 0.47
+    },
+    {
+      "risk_tier": "Medium",
+      "customers": 685,
+      "avg_charges": 9648.06,
+      "median_charges": 9563.03,
+      "total_charges": 6608920.48,
+      "avg_age": 43.51,
+      "avg_bmi": 33.49,
+      "customer_share_pct": 51.23,
+      "cost_share_pct": 37.22,
+      "cost_to_customer_ratio": 0.73
+    },
+    {
+      "risk_tier": "High",
+      "customers": 129,
+      "avg_charges": 21363.22,
+      "median_charges": 20167.34,
+      "total_charges": 2755855.0,
+      "avg_age": 37.83,
+      "avg_bmi": 25.32,
+      "customer_share_pct": 9.65,
+      "cost_share_pct": 15.52,
+      "cost_to_customer_ratio": 1.61
+    },
+    {
+      "risk_tier": "Critical",
+      "customers": 145,
+      "avg_charges": 41557.99,
+      "median_charges": 40904.2,
+      "total_charges": 6025908.53,
+      "avg_age": 39.12,
+      "avg_bmi": 35.51,
+      "customer_share_pct": 10.85,
+      "cost_share_pct": 33.94,
+      "cost_to_customer_ratio": 3.13
+    }
+  ],
+  "kmeans_k_selection": [
+    {
+      "k": 2,
+      "inertia": 4010.034042166576,
+      "silhouette": 0.34389232835139844
+    },
+    {
+      "k": 3,
+      "inertia": 3163.173201752494,
+      "silhouette": 0.27326208598329593
+    },
+    {
+      "k": 4,
+      "inertia": 2502.7142456536794,
+      "silhouette": 0.3058574389725181
+    },
+    {
+      "k": 5,
+      "inertia": 2187.0579532833417,
+      "silhouette": 0.2899520612508047
+    },
+    {
+      "k": 6,
+      "inertia": 1981.2683504107185,
+      "silhouette": 0.2912246560675024
+    },
+    {
+      "k": 7,
+      "inertia": 1775.1085692649542,
+      "silhouette": 0.27420670491473204
+    },
+    {
+      "k": 8,
+      "inertia": 1610.1977231285318,
+      "silhouette": 0.2810093914904529
+    }
+  ],
+  "kmeans_segments": [
+    {
+      "cluster": "Segment 1",
+      "customers": 386,
+      "avg_age": 25.4,
+      "avg_bmi": 29.44,
+      "avg_children": 0.47,
+      "smoker_rate": 0.0,
+      "avg_charges": 4508.85,
+      "persona": "Younger non-smokers / individuals"
+    },
+    {
+      "cluster": "Segment 2",
+      "customers": 308,
+      "avg_age": 41.0,
+      "avg_bmi": 31.1,
+      "avg_children": 2.7,
+      "smoker_rate": 0.0,
+      "avg_charges": 9586.4,
+      "persona": "Younger non-smokers / families"
+    },
+    {
+      "cluster": "Segment 3",
+      "customers": 370,
+      "avg_age": 52.68,
+      "avg_bmi": 31.51,
+      "avg_children": 0.41,
+      "smoker_rate": 0.0,
+      "avg_charges": 11617.35,
+      "persona": "Older non-smokers / individuals"
+    },
+    {
+      "cluster": "Segment 4",
+      "customers": 273,
+      "avg_age": 38.51,
+      "avg_bmi": 30.75,
+      "avg_children": 1.1,
+      "smoker_rate": 1.0,
+      "avg_charges": 32097.95,
+      "persona": "Younger smokers / individuals"
+    }
+  ],
+  "ab_test": {
+    "sample_size_per_group": 205,
+    "mde_pct": 10.0,
+    "n_control": 205,
+    "n_treatment": 205,
+    "mean_control": 31142.61148360976,
+    "mean_treatment": 28793.841274281967,
+    "lift_pct": -7.54198218272074,
+    "ci95_low": -4429.036542578214,
+    "ci95_high": -268.50387607736866,
+    "p_value": 0.027452878318884454,
+    "p_value_mannwhitney": 0.010007019813777785,
+    "significant": true,
+    "saving_per_member": 2348.7702093277912,
+    "programme_cost_per_member": 1500.0,
+    "net_benefit_per_member": 848.7702093277912,
+    "roi_pct": 56.58468062185275,
+    "engagement_rate": 0.7365853658536585,
+    "decision": "Roll out"
+  },
+  "model_comparison": [
+    {
+      "model": "Random Forest",
+      "cv_r2_mean": 0.8371823932753527,
+      "cv_r2_std": 0.024777643945846597,
+      "test_r2": 0.8959878324769269,
+      "test_mae": 2444.4597699929236,
+      "test_rmse": 4371.826450858196
+    },
+    {
+      "model": "Gradient Boosting",
+      "cv_r2_mean": 0.8257318727685835,
+      "cv_r2_std": 0.026488479283762748,
+      "test_r2": 0.899850126830051,
+      "test_mae": 2524.1495416110333,
+      "test_rmse": 4289.888868948138
+    },
+    {
+      "model": "Ridge",
+      "cv_r2_mean": 0.7228085476876116,
+      "cv_r2_std": 0.02778775521116103,
+      "test_r2": 0.8059213292402463,
+      "test_mae": 4193.891909470002,
+      "test_rmse": 5971.861740959912
+    },
+    {
+      "model": "Linear Regression",
+      "cv_r2_mean": 0.7227844561171829,
+      "cv_r2_std": 0.028259623571844684,
+      "test_r2": 0.8069287081198012,
+      "test_mae": 4177.045561036326,
+      "test_rmse": 5956.342894363587
+    }
+  ],
+  "best_model": "Random Forest",
+  "feature_importance": [
+    {
+      "feature": "smoker",
+      "importance": 1.3653954083186515,
+      "std": 0.07080282830053615
+    },
+    {
+      "feature": "bmi",
+      "importance": 0.238078066397649,
+      "std": 0.028383685297133403
+    },
+    {
+      "feature": "age",
+      "importance": 0.16000901013904098,
+      "std": 0.01414050872266069
+    },
+    {
+      "feature": "children",
+      "importance": 0.010361390697549055,
+      "std": 0.0033115823731962764
+    },
+    {
+      "feature": "region",
+      "importance": 0.0006171831497146952,
+      "std": 0.0015922438841639139
+    },
+    {
+      "feature": "sex",
+      "importance": -0.001311960861750161,
+      "std": 0.0006335101823171935
+    }
+  ]
+}

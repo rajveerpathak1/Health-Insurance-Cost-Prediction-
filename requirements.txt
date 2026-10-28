@@ -1,9 +1,14 @@
 flask
-pandas
-scikit-learn
+flask-cors
 gunicorn
 joblib
 numpy
+pandas
+scikit-learn
+scipy
+statsmodels
 matplotlib
 seaborn
-flask-cors
+plotly
+streamlit
+pytest

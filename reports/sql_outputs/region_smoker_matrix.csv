@@ -1,0 +1,5 @@
+region,avg_smoker,avg_non_smoker,smoker_rate_pct,customers
+southeast,34845.0,8032.0,25.0,364
+southwest,32269.0,8019.0,17.8,325
+northwest,30192.0,8582.0,17.9,324
+northeast,29674.0,9166.0,20.7,324

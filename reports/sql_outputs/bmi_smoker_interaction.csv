@@ -1,0 +1,9 @@
+bmi_category,smoker,customers,avg_charges
+Obese,yes,145,41558.0
+Overweight,yes,74,22496.0
+Normal,yes,50,19942.0
+Underweight,yes,5,18810.0
+Obese,no,561,8856.0
+Overweight,no,312,8258.0
+Normal,no,175,7686.0
+Underweight,no,15,5533.0

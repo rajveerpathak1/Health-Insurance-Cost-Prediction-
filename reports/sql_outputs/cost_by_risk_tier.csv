@@ -1,0 +1,5 @@
+risk_tier,customers,avg_charges,cost_share_pct
+Low,378,6253.0,13.3
+Medium,685,9648.0,37.2
+High,129,21363.0,15.5
+Critical,145,41558.0,33.9
